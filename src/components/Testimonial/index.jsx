@@ -21,7 +21,7 @@ const Testimonial = () => {
       className="bg-pink px-8 lg:px-80 bg-no-repeat bg-left-top bg-origin-content box-sizing relative py-8 h-52"
     >
       <h1 className="lg:text-center text-4xl font-bold pt-8">Testimonial</h1>
-      <div className="absolute -bottom-20 left-0 right-0 max-w-full lg:left-64 lg:right-64 flex gap-12">
+      <div className="absolute -bottom-20 left-0 right-0 max-w-full lg:left-64 lg:right-64 flex gap-10">
         <div className="hidden lg:flex justify-center items-center">
           <button
             onClick={() => scrollTo("left")}
@@ -30,7 +30,10 @@ const Testimonial = () => {
             <img src={Icon} alt="icon" className="rotate-180" />
           </button>
         </div>
-        <div ref={testiRef} className="flex gap-2 no-scrollbar overflow-hidden">
+        <div
+          ref={testiRef}
+          className="flex gap-2 no-scrollbar overflow-x-scroll lg:overflow-hidden px-8"
+        >
           {testimonials?.map(({ id, by, testimony }) => (
             <Card key={id} title={by} body={testimony} />
           ))}
