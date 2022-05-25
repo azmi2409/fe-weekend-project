@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       ...colors,
       pink: "#EEBECE",
+      specialBlue: "#0B24FB",
     },
     extend: {
       backgroundImage: {},
