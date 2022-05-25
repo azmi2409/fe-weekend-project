@@ -7,9 +7,9 @@ const HelpTips = () => {
   return (
     <section
       style={{ backgroundImage: `url(${bgHelp})` }}
-      className="bg-black px-8 md:px-52 bg-no-repeat bg-right-top box-sizing relative min-h-max py-5 bg-origin-content"
+      className="bg-black px-8 lg:px-52 bg-no-repeat bg-right-top box-sizing relative min-h-max py-5 bg-origin-content"
     >
-      <h1 className="text-justify md:text-center text-3xl font-bold pt-8">
+      <h1 className="text-justify lg:text-center text-3xl font-bold pt-8">
         Help & Tips
       </h1>
       <div className="flex gap-2 justify-center items-center left-8 max-w-full lg:left-80 lg:right-80 overflow-auto flex-col lg:flex-row mt-8">
@@ -38,7 +38,7 @@ function Card({ title, body, bg = "" }) {
         className="absolute inset-0 w-full h-full object-contain object-center"
       />
       <div className="absolute bottom-0 left-0 right-0 p-5 mix-blend-normal bg-black bg-opacity-50 h-20">
-        <div className="text-md font-bold text-justify">{title}</div>
+        <div className="text-md font-bold text-left">{title}</div>
       </div>
     </div>
   );

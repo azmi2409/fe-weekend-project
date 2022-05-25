@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-16 flex items-center py-6 px-6 gap-3 md:px-52 bg-blue-700 text-white justify-between">
+    <footer className="w-full h-16 flex items-center py-6 px-6 gap-3 lg:px-52 bg-blue-700 text-white justify-between">
       <div>
         <h2>
           <span className="font-bold">wknd@</span>2020

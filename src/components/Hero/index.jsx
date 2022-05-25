@@ -6,13 +6,13 @@ const Hero = () => {
   return (
     <section
       style={{ backgroundImage: `url(${hero})` }}
-      className={`bg-pink min-h-screen flex flex-col bg-no-repeat bg-cover bg-center py-24`}
+      className={`bg-pink min-h-screen h-screen lg:h-auto flex flex-col bg-no-repeat bg-cover bg-center py-24`}
     >
       <div className="text-center flex flex-col gap-5 my-1">
-        <h1 className="md:text-6xl uppercase font-bold text-5xl">
+        <h1 className="lg:text-6xl uppercase font-bold text-5xl">
           Weekend From Home
         </h1>
-        <h3 className="md:text-xl italic text-lg">
+        <h3 className="lg:text-xl italic">
           Stay active with a little workout.
         </h3>
         <Robot />
