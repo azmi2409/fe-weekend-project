@@ -5,8 +5,7 @@ import hero from "../../assets/hero-bg.png";
 const Hero = () => {
   return (
     <section
-      style={{ backgroundImage: `url(${hero})` }}
-      className={`bg-pink min-h-screen h-screen lg:h-auto flex flex-col bg-no-repeat bg-cover bg-center py-24`}
+      className={`bg-pink min-h-screen h-screen lg:h-auto flex flex-col bg-no-repeat bg-cover bg-center py-24 bg-hero`}
     >
       <div className="text-center flex flex-col gap-5 my-1">
         <h1 className="lg:text-6xl uppercase font-bold text-5xl">

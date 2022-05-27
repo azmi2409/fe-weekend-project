@@ -1,15 +1,11 @@
 import React from "react";
-import bgHelp from "../../assets/bg-help.svg";
 import { SiteContext } from "../../context";
 import icon from "../../assets/icon.svg";
 
 const HelpTips = () => {
   const { tips } = React.useContext(SiteContext);
   return (
-    <section
-      style={{ backgroundImage: `url(${bgHelp})` }}
-      className="bg-black px-8 lg:px-48 bg-no-repeat bg-right-top box-sizing relative min-h-max py-5 bg-origin-content"
-    >
+    <section className="bg-black px-8 lg:px-48 bg-no-repeat bg-right-top box-sizing relative min-h-max py-5 bg-origin-content lg:bg-pinkbubble">
       <h1 className="text-justify lg:text-center text-3xl font-bold pt-8">
         Help & Tips
       </h1>

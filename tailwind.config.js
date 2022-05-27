@@ -8,7 +8,11 @@ module.exports = {
       specialBlue: "#0B24FB",
     },
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        pinkbubble: "url('./src/assets/bg-help.svg')",
+        bluebubble: "url('./src/assets/oval.svg')",
+        hero: "url('./src/assets/hero-bg.png')",
+      },
     },
   },
   plugins: [],

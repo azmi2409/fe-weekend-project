@@ -2,31 +2,51 @@ import React from "react";
 import oval from "../../assets/oval.svg";
 import { SiteContext } from "../../context";
 import Icon from "../../assets/icon.svg";
+import { sideScroll, updateScroll } from "../../utils/helper";
 
 const Testimonial = () => {
   const { testimonials } = React.useContext(SiteContext);
-  const testiRef = React.createRef();
+  const testiRef = React.useRef();
+  const [scroll, setScroll] = React.useState({
+    maxScroll: 0,
+    currentScroll: 0,
+  });
 
-  const scrollTo = (direction) => {
+  React.useEffect(() => {
+    if (testiRef && testiRef.current) {
+      function checkScroll() {
+        const data = updateScroll(testiRef);
+        setScroll(data);
+      }
+      const current = testiRef.current;
+      current.addEventListener("scroll", checkScroll, false);
+      return () => current.removeEventListener("scroll", checkScroll, false);
+    }
+  }, []);
+
+  const scrollTo = async (direction) => {
     if (direction === "left") {
-      testiRef.current.scrollLeft -= 200;
+      sideScroll(testiRef.current, "left", 20, 240, 10);
     } else {
-      testiRef.current.scrollLeft += 240;
+      sideScroll(testiRef.current, "right", 20, 240, 10);
     }
   };
 
+  const leftClass =
+    scroll.currentScroll < 60
+      ? "w-8 h-8 bg-white rounded-full text-specialBlue flex justify-center items-center opacity-50"
+      : "w-8 h-8 bg-white rounded-full text-specialBlue flex justify-center items-center";
+  const rightClass =
+    scroll.maxScroll - scroll.currentScroll < 60 || scroll.maxScroll == 0
+      ? "w-8 h-8 bg-white rounded-full text-specialBlue flex justify-center items-center opacity-50"
+      : "w-8 h-8 bg-white rounded-full text-specialBlue flex justify-center items-center";
+
   return (
-    <section
-      style={{ backgroundImage: `url(${oval})` }}
-      className="bg-pink px-8 lg:px-80 bg-no-repeat bg-left-top bg-origin-content box-sizing relative py-8 h-52"
-    >
+    <section className="bg-pink px-8 lg:px-80 bg-no-repeat bg-left-top bg-origin-content box-sizing relative py-8 h-52 bg-bluebubble">
       <h1 className="lg:text-center text-4xl font-bold pt-8">Testimonial</h1>
       <div className="absolute -bottom-20 left-0 right-0 max-w-full lg:left-64 lg:right-64 flex gap-10">
         <div className="hidden lg:flex justify-center items-center">
-          <button
-            onClick={() => scrollTo("left")}
-            className="w-8 h-8 bg-white rounded-full text-specialBlue flex justify-center items-center"
-          >
+          <button onClick={() => scrollTo("left")} className={leftClass}>
             <img src={Icon} alt="icon" className="rotate-180" />
           </button>
         </div>
@@ -39,10 +59,7 @@ const Testimonial = () => {
           ))}
         </div>
         <div className="hidden lg:flex justify-center items-center">
-          <button
-            onClick={() => scrollTo("right")}
-            className="w-8 h-8 bg-white rounded-full text-specialBlue flex justify-center items-center"
-          >
+          <button onClick={() => scrollTo("right")} className={rightClass}>
             <img src={Icon} alt="icon" />
           </button>
         </div>
