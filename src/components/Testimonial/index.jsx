@@ -20,7 +20,7 @@ const Testimonial = () => {
       }
       const current = testiRef.current;
       const maxScroll = current.scrollWidth - current.offsetWidth;
-      setScroll({ ...scroll, maxScroll });
+      setScroll({ ...scroll, maxScroll: maxScroll });
       current.addEventListener("scroll", checkScroll, false);
       return () => current.removeEventListener("scroll", checkScroll, false);
     }
