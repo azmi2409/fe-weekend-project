@@ -1,4 +1,4 @@
-## Weekend Company Frontend Developer Test
+## Weekend Project Frontend Developer Test
 
 ![Screenshot](https://i.ibb.co/mFDvWX8/Screen-Shot-2022-05-27-at-13-53-57.png)
 
